@@ -1,4 +1,6 @@
 
+# Sample for [Rails101](https://leanpub.com/rails-101)
+
 ### Style Guides
 
 * [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide)
