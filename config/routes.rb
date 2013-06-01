@@ -11,5 +11,6 @@ Groupmy::Application.routes.draw do
 
   namespace :account do
     resources :groups
+    resources :posts
   end
 end
