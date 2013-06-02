@@ -8,4 +8,9 @@ Groupmy::Application.routes.draw do
     end
     resources :posts
   end
+
+  namespace :account do
+    resources :groups
+    resources :posts
+  end
 end
