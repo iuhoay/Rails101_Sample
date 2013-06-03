@@ -7,9 +7,10 @@
   <%= render_page_image_link_tag %>
   <%= csrf_meta_tag %>
 
-  <%= stylesheet_link_tag "application" %>
-  
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= yield :stylesheets %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= yield :javascripts %>
 
   <meta property="og:title"       content="<%= page_title ||  SeoHelper.configuration.site_name %>"/>
   <meta property="og:description" content="<%= page_description || SeoHelper.configuration.default_page_description %>"/>
@@ -19,7 +20,7 @@
 
 <%= render_body_tag %>
 
-<%= render :partial => "common/menu" %>
+<%= render partial: "common/menu" %>
 
   <div class="container">
 
@@ -29,23 +30,13 @@
         <div class="row">
           <%= yield %>
           <%= yield (:sidebar) %>
-        </div> 
-    
+        </div>
       </div>
 
-      <%= render :partial => "common/footer" %>    
+      <%= render partial: "common/footer" %>
   </div>
 
-
-
-  
-
-  <%= render :partial => "common/bootstrap_modal" %>    
- 
-  <%= javascript_include_tag "application" %>
-
-  <%= yield :javascripts %>
-
+  <%= render partial: "common/bootstrap_modal" %>
 
 </body>
 </html>
